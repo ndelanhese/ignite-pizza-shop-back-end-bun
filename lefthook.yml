@@ -1,0 +1,34 @@
+pre-commit:
+  parallel: true
+  commands:
+    check-and-lint:
+      glob: "src/*.ts"
+      run: bun biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
+    
+    code-spell:
+      run: bunx cspell "src/**/*.ts"
+      
+    # test:
+    #   run: bun run test
+
+prepare-commit-msg:
+  commands:
+    commitzen:
+      interactive: true
+      run: exec < /dev/tty && bunx cz --hook || true
+      env:
+        LEFTHOOK: 0
+
+commit-msg:
+  commands:
+    commitlint:
+      skip:
+        - merge
+        - rebase
+      run: bunx commitlint --edit {1}
+
+pre-push:
+  parallel: true
+  commands:
+    build:
+      run: bun run build
