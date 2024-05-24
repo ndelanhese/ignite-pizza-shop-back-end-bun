@@ -1,8 +1,13 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"version": "0.2",
-	"import": ["@cspell/dict-pt-br/cspell-ext.json"],
+	"import": [
+		"@cspell/dict-pt-br/cspell-ext.json"
+	],
 	"language": "en, pt-BR",
 	"caseSensitive": false,
-	"words": ["elysia"]
+	"words": [
+		"elysia",
+		"paralleldrive"
+	]
 }
