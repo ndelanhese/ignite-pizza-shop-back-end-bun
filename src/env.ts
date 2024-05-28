@@ -2,6 +2,8 @@ import { z } from "zod";
 
 const envSchema = z.object({
 	DB_URL: z.string().url().min(1),
+	API_BASE_URL: z.string().url().min(1),
+	AUTH_REDIRECT_URL: z.string().url().min(1),
 	API_PORT: z.coerce.number().default(3333),
 });
 
