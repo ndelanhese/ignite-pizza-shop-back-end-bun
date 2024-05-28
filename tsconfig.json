@@ -29,6 +29,7 @@
 			"@env": ["src/env.ts"],
 			"@db/*": ["src/db/*"],
 			"@lib/*": ["src/lib/*"],
+			"@http/*": ["src/http/*"],
 			"@/*": ["src/*"],
 		}
 	}
