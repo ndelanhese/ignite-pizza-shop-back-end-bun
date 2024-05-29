@@ -22,6 +22,27 @@
       "when": 1716979889915,
       "tag": "0002_secret_whiplash",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1716980612745,
+      "tag": "0003_oval_wendell_rand",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1716983968497,
+      "tag": "0004_same_santa_claus",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1716984275303,
+      "tag": "0005_faithful_silhouette",
+      "breakpoints": true
     }
   ]
 }
