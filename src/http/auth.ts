@@ -27,4 +27,7 @@ export const auth = new Elysia()
 				value: token,
 			});
 		},
+		signOut: async () => {
+			auth.remove();
+		},
 	}));
