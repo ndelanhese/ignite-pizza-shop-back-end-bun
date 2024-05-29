@@ -14,7 +14,16 @@ const app = new Elysia()
 	.use(authenticateFromLink)
 	.use(signOut)
 	.use(getProfile)
-	.use(getManagedRestaurant);
+	.use(getManagedRestaurant)
+	.onError(({ code, error, set }) => {
+		if (code === "VALIDATION") {
+			set.status = error.status;
+			return error.toResponse();
+		}
+
+		set.status = 500;
+		return;
+	});
 
 app.listen(env.API_PORT, () => {
 	console.log(chalk.green("🚀 HTTP server running!"));

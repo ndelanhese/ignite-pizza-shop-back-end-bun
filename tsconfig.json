@@ -30,6 +30,7 @@
 			"@db/*": ["src/db/*"],
 			"@lib/*": ["src/lib/*"],
 			"@http/*": ["src/http/*"],
+			"@errors/*": ["src/http/errors/*"],
 			"@/*": ["src/*"],
 		}
 	}
