@@ -15,6 +15,13 @@
       "when": 1716886135995,
       "tag": "0001_old_nekra",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716979889915,
+      "tag": "0002_secret_whiplash",
+      "breakpoints": true
     }
   ]
 }

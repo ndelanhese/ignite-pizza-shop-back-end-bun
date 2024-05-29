@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun --watch src/http/server.ts",
-    "build": "bun build src/http/server.ts",
+    "build": "bun build src/http/server.ts --outdir ./dist --target bun",
     "start": "NODE_ENV=production bun src/http/server.ts",
     "test": "bun test",
     "update-deps": "bunx npm-check-updates --root --format group -i",
