@@ -1,6 +1,7 @@
 import { env } from "@env";
 import chalk from "chalk";
 import { Elysia } from "elysia";
+import { aproveOrder } from "./routes/aprove-order";
 import { authenticateFromLink } from "./routes/authenticate-from-link";
 import { getManagedRestaurant } from "./routes/get-managed-restaurant";
 import { getOrderDetails } from "./routes/get-order-details";
@@ -17,6 +18,7 @@ const app = new Elysia()
 	.use(getProfile)
 	.use(getManagedRestaurant)
 	.use(getOrderDetails)
+	.use(aproveOrder)
 	.onError(({ code, error, set }) => {
 		if (code === "VALIDATION") {
 			set.status = error.status;
