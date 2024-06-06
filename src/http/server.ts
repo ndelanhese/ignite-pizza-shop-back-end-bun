@@ -3,6 +3,7 @@ import chalk from "chalk";
 import { Elysia } from "elysia";
 import { authenticateFromLink } from "./routes/authenticate-from-link";
 import { getManagedRestaurant } from "./routes/get-managed-restaurant";
+import { getOrderDetails } from "./routes/get-order-details";
 import { getProfile } from "./routes/get-profile";
 import { registerRestaurant } from "./routes/register-restaurant";
 import { sendAuthLink } from "./routes/send-auth-link";
@@ -15,6 +16,7 @@ const app = new Elysia()
 	.use(signOut)
 	.use(getProfile)
 	.use(getManagedRestaurant)
+	.use(getOrderDetails)
 	.onError(({ code, error, set }) => {
 		if (code === "VALIDATION") {
 			set.status = error.status;
