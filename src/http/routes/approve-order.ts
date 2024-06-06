@@ -5,7 +5,7 @@ import { UnauthorizedError } from "@http/errors/unauthorized-error";
 import { eq } from "drizzle-orm";
 import Elysia, { t } from "elysia";
 
-export const aproveOrder = new Elysia().use(auth).patch(
+export const approveOrder = new Elysia().use(auth).patch(
 	"/orders/:orderId/approve",
 	async ({ getCurrentUser, set, params }) => {
 		const { orderId } = params;
