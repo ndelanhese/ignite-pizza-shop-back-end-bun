@@ -3,7 +3,7 @@ import { orders } from "@db/schema";
 import { auth } from "@http/auth";
 import { UnauthorizedError } from "@http/errors/unauthorized-error";
 import dayjs from "dayjs";
-import { and, count, eq, gte, sql, sum } from "drizzle-orm";
+import { and, count, eq, gte, sql } from "drizzle-orm";
 import Elysia from "elysia";
 
 export const getMonthOrdersAmount = new Elysia()

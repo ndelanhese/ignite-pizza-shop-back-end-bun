@@ -28,6 +28,8 @@ export const auth = new Elysia()
 
 			const SEVEN_DAYS_IN_SECONDS = 60 * 60 * 24 * 7;
 
+			console.log(token);
+
 			auth.set({
 				httpOnly: true,
 				maxAge: SEVEN_DAYS_IN_SECONDS,
