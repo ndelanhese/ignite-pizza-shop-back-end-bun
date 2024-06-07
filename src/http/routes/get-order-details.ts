@@ -7,7 +7,7 @@ export const getOrderDetails = new Elysia().use(auth).get(
 	"/orders/:orderId",
 	async ({ getCurrentUser, params, set }) => {
 		const { orderId } = params;
-		const restaurantId = await getCurrentUser();
+		const { restaurantId } = await getCurrentUser();
 
 		if (!restaurantId) {
 			throw new UnauthorizedError();
@@ -43,8 +43,11 @@ export const getOrderDetails = new Elysia().use(auth).get(
 					},
 				},
 			},
-			where: (fields, { eq }) => {
-				return eq(fields.id, orderId);
+			where: (fields, { eq, and }) => {
+				return and(
+					eq(fields.id, orderId),
+					eq(fields.restaurantId, restaurantId),
+				);
 			},
 		});
 
