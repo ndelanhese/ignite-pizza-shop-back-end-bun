@@ -39,6 +39,9 @@ const app = new Elysia()
 	.use(getMonthCanceledOrdersAmount)
 	.use(getPopularProducts)
 	.use(getDailyRevenueInPeriod)
+	.get("/ping", async () => {
+		return "pong";
+	})
 	.onError(({ code, error, set }) => {
 		if (code === "VALIDATION") {
 			set.status = error.status;
